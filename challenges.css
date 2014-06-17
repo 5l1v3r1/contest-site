@@ -1,0 +1,159 @@
+.challenge, .front, .challenge-image {
+  -moz-user-select: none; 
+  -khtml-user-select: none; 
+  -webkit-user-select: none; 
+  -o-user-select: none; 
+}
+
+#container {
+  perspective: 600;
+  -webkit-perspective: 600;
+  height: 100%;
+  width: 100%;
+}
+
+.challenge {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.challenge .front {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  z-index: 1;
+  overflow: hidden;
+  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.challenge .back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  
+  overflow: hidden;
+  display: none;
+  z-index: 0;
+  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.title-popup {
+  color: #000;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 10px;
+  
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  position: absolute;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  
+  transition: top 0.5s ease;
+  -webkit-transition: top 0.5s ease;
+}
+
+.challenge-image {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transition: margin-top 0.5s ease;
+}
+
+.challenge {
+  position: fixed;
+}
+
+#challenge1 {
+  z-index: 4;
+}
+
+#challenge2 {
+  z-index: 3;
+}
+
+#challenge3 {
+  z-index: 2;
+}
+
+#challenge4 {
+  z-index: 1;
+}
+
+.challenge:hover .title-popup, .challenge-selected .title-popup {
+  top: calc(100% - 60px);
+}
+
+.challenge:hover .challenge-image, .challenge-selected .challenge-image {
+  margin-top: -10px;
+}
+
+/**
+ * Challenge button titles.
+ */
+
+#challenge1 button:hover, #challenge1 .title-popup {
+  color: #e74c3c;
+}
+
+#challenge2 button:hover, #challenge2 .title-popup{
+  color: #f39c12;
+}
+
+#challenge3 button:hover, #challenge3 .title-popup {
+  color: #2ecc71;
+}
+
+#challenge4 button:hover, #challenge4 .title-popup {
+  color: #3498db;
+}
+
+/**
+ * Front colors
+ */
+
+#challenge1 .front {
+  background: #e74c3c;
+}
+
+#challenge2 .front {
+  background: #f39c12;
+}
+
+#challenge3 .front {
+  background: #2ecc71;
+}
+
+#challenge4 .front {
+  background: #3498db;
+}
+
+/**
+ * Back colors
+ */
+
+#challenge1 .back {
+  background: #e74c3c;
+}
+
+#challenge2 .back {
+  background: #f39c12;
+}
+
+#challenge3 .back {
+  background: #2ecc71;
+}
+
+#challenge4 .back {
+  background: #3498db;
+}
