@@ -66,8 +66,8 @@
     Manager.prototype.handleResize = function() {
       var cellHeight, cellWidth, challenge, i, image, imageSize, minSize, rect, x, y, _i, _j, _len, _len1, _ref, _ref1, _results;
       rect = this.getContentRect();
-      cellWidth = (Math.ceil(rect.width / 2)) - 5;
-      cellHeight = (Math.ceil(rect.height / 2)) - 5;
+      cellWidth = (Math.ceil(rect.width / 2)) - 10;
+      cellHeight = (Math.ceil(rect.height / 2)) - 10;
       minSize = Math.min(cellWidth, cellHeight);
       imageSize = Math.min(minSize - 100, 200);
       _ref = document.getElementsByClassName('challenge-image');
@@ -82,8 +82,8 @@
       _results = [];
       for (i = _j = 0, _len1 = _ref1.length; _j < _len1; i = ++_j) {
         challenge = _ref1[i];
-        x = rect.x + ((i % 2) * (cellWidth + 10));
-        y = rect.y + (i < 2 ? 0 : cellHeight + 10);
+        x = rect.x + ((i % 2) * (cellWidth + 20));
+        y = rect.y + (i < 2 ? 0 : cellHeight + 20);
         challenge.style.width = cellWidth + 'px';
         challenge.style.height = cellHeight + 'px';
         challenge.style.left = x + 'px';

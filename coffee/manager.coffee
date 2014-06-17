@@ -40,8 +40,8 @@ class Manager
 
   handleResize: ->
     rect = @getContentRect()
-    cellWidth = (Math.ceil rect.width / 2) - 5
-    cellHeight = (Math.ceil rect.height / 2) - 5
+    cellWidth = (Math.ceil rect.width / 2) - 10
+    cellHeight = (Math.ceil rect.height / 2) - 10
     minSize = Math.min cellWidth, cellHeight
     imageSize = Math.min minSize - 100, 200
     for image in document.getElementsByClassName 'challenge-image'
@@ -50,8 +50,8 @@ class Manager
       image.style.left = ((cellWidth - imageSize) / 2) + 'px'
       image.style.top = ((cellHeight - imageSize) / 2) + 'px'
     for challenge, i in @challenges
-      x = rect.x + ((i % 2) * (cellWidth + 10))
-      y = rect.y + (if i < 2 then 0 else cellHeight + 10)
+      x = rect.x + ((i % 2) * (cellWidth + 20))
+      y = rect.y + (if i < 2 then 0 else cellHeight + 20)
       challenge.style.width = cellWidth + 'px'
       challenge.style.height = cellHeight + 'px'
       challenge.style.left = x + 'px'
