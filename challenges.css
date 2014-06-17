@@ -6,8 +6,8 @@
 }
 
 #container {
-  perspective: 600;
-  -webkit-perspective: 600;
+  perspective: 600px;
+  -webkit-perspective: 600px;
   height: 100%;
   width: 100%;
 }
