@@ -17,6 +17,8 @@
   backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  
+  cursor: pointer;
 }
 
 .challenge .front {
@@ -63,6 +65,26 @@
   -webkit-transition: top 0.5s ease;
   
   outline: 1px solid transparent;
+  
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: calc(100% - 50px);
+  left: calc(100% - 50px);
+  opacity: 0;
+  
+  width: 40px;
+  height: 40px;
+  
+  transform: rotateZ(180deg);
+  -webkit-transform: rotateZ(180deg);
+  
+  transition: all 0.7s ease;
+  -webkit-transition: all 0.7s ease;
+  
+  cursor: pointer;
 }
 
 .challenge-image {
@@ -90,6 +112,20 @@
 
 #challenge4 {
   z-index: 1;
+}
+
+.challenge-selected {
+  cursor: pointer;
+}
+
+.challenge-selected .close-button {
+  opacity: 1;
+  transform: rotateZ(0deg);
+  -webkit-transform: rotateZ(0deg);
+}
+
+.challenge-deselected {
+  cursor: auto;
 }
 
 .challenge:hover .title-popup, .challenge-selected .title-popup {

@@ -16,9 +16,9 @@
   };
 
   removeClass = function(div, aClass) {
-    var names, _ref, _ref1;
+    var names, _ref;
     names = ((_ref = div.className) != null ? _ref : '').split(' ');
-    if (_ref1 = !aClass, __indexOf.call(names, _ref1) >= 0) {
+    if (!(__indexOf.call(names, aClass) >= 0)) {
       return;
     }
     names.splice(names.indexOf(aClass), 1);
@@ -114,6 +114,11 @@
         challenge = _ref2[i];
         if (i === number) {
           continue;
+        }
+        if (this.numFlipped == null) {
+          addClass(challenge, 'challenge-deselected');
+        } else {
+          removeClass(challenge, 'challenge-deselected');
         }
         new FlipAnimation(challenge, start, end, 0.8).start(delay);
         delay += 200;

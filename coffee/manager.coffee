@@ -8,7 +8,7 @@ addClass = (div, aClass) ->
 
 removeClass = (div, aClass) ->
   names = (div.className ? '').split ' '
-  return if not aClass in names
+  return if not (aClass in names)
   names.splice names.indexOf(aClass), 1
   div.className = names.join ' '
 
@@ -70,6 +70,10 @@ class Manager
     delay = 0
     for challenge, i in @challenges
       continue if i is number
+      if not @numFlipped?
+        addClass challenge, 'challenge-deselected'
+      else
+        removeClass challenge, 'challenge-deselected'
       new FlipAnimation(challenge, start, end, 0.8).start delay
       delay += 200
     if @numFlipped?
